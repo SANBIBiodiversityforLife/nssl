@@ -14,7 +14,7 @@ jQuery(document).ready(function($){
 	
 	// Show/hide the other fields
 	$('#edit-field-exploitation-extent input').change(function() {
-		if (this.value == 'relatives' || this.value == 'none') {
+		if (this.value == 'relatives') {
 			$('#usesformwrapper').hide('fast');
 			$('#demographicsformwrapper').hide('fast');
 			$('#edit-field-similar-species-wrapper').show('fast');
