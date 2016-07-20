@@ -1,0 +1,54 @@
+<?php
+
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\node\Entity\Node;
+use Drupal\taxonomy\Entity\Term;
+
+
+function ssp_import_node_presave($node){
+	// Reset the sensitivity each time before we save
+	$node->field_sensitivity->value = '';
+	
+	// Utilisation is having a significant effect
+	if($node->field_exploitation_extent->value != 'relatives') {		
+		
+		// Individuals are permanently removed and killed
+		$targeted_demographics = [];
+		foreach($node->field_targeted_demographics->getValue() as $t) {
+			$targeted_demographics[] = $t['value'];
+		}
+		if(in_array('mature', $targeted_demographics) || in_array('immature', $targeted_demographics)) {
+			
+			// Either the population is small, the range is small or it's got a slow growth rate 
+			if(count($node->field_population_size->getValue()) > 0) { 
+				$node->field_sensitivity->value = 'rare';
+			}
+			
+			// Otherwise, if the exploitation is significant...
+			else if(($node->field_exploitation_extent->value == 'significant')) {
+				$node->field_sensitivity->value = 'exploited';
+			}		
+		}
+	}
+	
+	// Utilisation is having a significant effect on a close relative with similar life traits
+	else {		
+		
+		// Double check that the relative is actually a sensitive species
+		$relative_nid = $node->field_similar_species->getValue()[0]['target_id'];
+		$relative = Node::load($relative_nid);
+		if(count($relative->field_sensitivity->getValue()) > 0) {
+		
+			// Does this species have a small population, small range or slow growth rate?
+			if(count($node->field_population_size->getValue()) > 0) { 
+				$node->field_sensitivity->value = 'relative';
+			}
+		}
+	
+	}
+	
+	// At this stage, if it's sensitive, we need to re-evaluate all of the ones that refer to it?
+	
+	//print_r(count($relative->field_sensitivity->getValue()));
+	//exit();
+}

@@ -1,0 +1,7 @@
+ssp_import.content:
+  path: '/admin/ssp_import'
+  defaults:
+    _controller: '\Drupal\ssp_import\Controller\SspImportController::content'
+    _title: 'Hello World'
+  requirements:
+    _permission: 'access content'

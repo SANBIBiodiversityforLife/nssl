@@ -1,0 +1,53 @@
+/**
+ * Place your custom styles here.
+ */
+ul.nav-tabs {
+	margin-bottom: 20px;	
+}
+.field {
+	margin-bottom: 10px;
+}
+.field .field--label {
+	font-size: 1.5em;
+	font-weight: normal;
+}
+.content section h2 {
+	font-size: 1.8em;
+	border-top: 15px solid #e5f0f3;
+	padding-top: 20px;
+	margin-top: 40px;
+}
+.content section article.js-comment {
+	border: 1px solid #eee;
+	border-left: 0;
+	border-right: 0;
+	padding: 15px 0;
+}
+.content section article.js-comment footer {
+	background-color: #FFFBD6;
+	padding: 4px 0;
+}
+.content section article.js-comment footer p {
+	display: inline;
+}
+footer.footer {
+	padding-left: 0;
+}
+footer.footer nav li a {
+	padding-left: 0;
+}
+
+.sanbi-form-wrapper h2 {
+	padding: 15px 0px; 
+	text-align: center;
+	margin: 0px 0 10px 0;
+	background-color: rgb(246, 239, 203);
+}
+#node-species-form #edit-actions {
+	border-top: 15px solid rgb(119, 119, 119);
+	padding-top: 20px;
+	margin-top: 30px;
+}
+#edit-actions button {
+	margin-right: 5px;	
+}

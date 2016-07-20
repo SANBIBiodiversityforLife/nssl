@@ -1,0 +1,11 @@
+<?php
+/**
+ * @file
+ * Bootstrap sub-theme.
+ *
+ * Place your custom PHP code in this file.
+ */
+/*function sanbi_entity_presave(EntityInterface $entity){
+	\Drupal::logger('my_module')->error('hello');
+    //$entity->set( 'field_fieldname',importantfunction() );
+}*/
