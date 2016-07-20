@@ -1,6 +1,10 @@
 jQuery(document).ready(function($){
 	// Tried to do this in the template but to no avail. 
 	$('#sspFlag').appendTo("h1.page-header");
+	if ($('.field--name-field-sensitivity .related-species-placeholder').length > 0) {
+		$('.field--name-field-sensitivity .related-species-placeholder').replaceWith($('.field--name-field-similar-species'));
+	}
+	
 	
 	
 	// Hide the similar species field if required
@@ -26,6 +30,7 @@ jQuery(document).ready(function($){
 		else {
 			$('#usesformwrapper').show('fast');
 			$('#demographicsformwrapper').show('fast');
+			$('#edit-field-similar-species-wrapper input').val("");
 			$('#edit-field-similar-species-wrapper').hide('fast');
 			
 			// Take this out if necessary

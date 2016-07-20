@@ -5,11 +5,11 @@ ul.nav-tabs {
 	margin-bottom: 20px;	
 }
 .field {
-	margin-bottom: 10px;
+	margin-bottom: 20px;
 }
 .field .field--label {
 	font-size: 1.5em;
-	font-weight: normal;
+	font-weight: bold;
 }
 .content section h2 {
 	font-size: 1.8em;
@@ -51,3 +51,42 @@ footer.footer nav li a {
 #edit-actions button {
 	margin-right: 5px;	
 }
+.species-info-group {
+	border-top: 1px solid rgb(227, 227, 227);
+	padding: 20px 0 10px 0;
+}
+.species-info-group:hover {
+	background-color: rgb(255, 244, 218);
+}
+.page-node-type-species h1.page-header {
+	margin: 25px 0 25px 0;
+}
+.page-node-type-species .field--name-field-sensitivity {
+	padding: 20px;
+	border: 1px solid #d43f3a;
+	border-radius: 10px;
+	background-color: #d9534f;
+	color: white;
+	font-weight: bold;
+	margin: -5px 20px 20px 0px;
+}
+.field--name-field-sensitivity .field--name-field-similar-species {	
+	background-color: #ffc4c4;
+	padding: 3px;
+	display: inline;
+	border-radius: 3px;
+}
+.field--name-field-similar-species .field--label {
+	font-size: 1em;
+}
+.field--name-field-sensitivity .field--name-field-similar-species .field--item {
+	display: inline;
+	padding-right: 0;
+}
+.field--name-field-exploit-extent-references .field--label,
+.field--name-field-uses-references .field--label,
+.field--name-field-tds-references .field--label,
+.field--name-field-pop-size-references .field--label {
+	font-size: 1.1em;	
+}
+
