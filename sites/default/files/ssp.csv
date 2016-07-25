@@ -115,7 +115,7 @@ AGR: I disagree: this would be counterproductive for Euphorbia and Aloe.",,LC,,S
 Aloe hahnii Gideon F.Sm. & R.R.Klopper,"LVS: maybe block all species
 AGR: I disagree: this would be counterproductive for Euphorbia and Aloe.",,NT,B1ab(iii)+2ab(iii),Decreasing,2052,,,Herb;Succulent,TRUE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,1
 Aloe hardyi H.F.Glen,"LVS: maybe block all species
-AGR: I disagree: this would be counterproductive for Euphorbia and Aloe.",,R,,Stable,490-1400,,10-Apr,Shrub;Succulent,TRUE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,1
+AGR: I disagree: this would be counterproductive for Euphorbia and Aloe.",,R,,Stable,490-1400,,42470,Shrub;Succulent,TRUE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,1
 Aloe hereroensis Engl. var. hereroensis,"LVS: maybe block all species
 AGR: I disagree: this would be counterproductive for Euphorbia and Aloe.",,LC,,Stable,,,>50,Dwarf shrub;Succulent,TRUE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,1
 Aloe humilis (L.) Mill.,"LVS: maybe block all species
@@ -549,7 +549,7 @@ Droughts and fires cause a high mortality amongst the seedlings.
 Traditional medicine use",CR,"A2acd; B1ab(ii,iv,v)+2ab(ii,iv,v)",Decreasing,50,300-500,1,Dwarf shrub;Geophyte,TRUE,TRUE,TRUE,TRUE,TRUE,FALSE,FALSE,FALSE,1
 Encephalartos cycadifolius (Jacq.) Lehm.,,,LC,,Stable,250,>10000,>10,Shrub,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,1
 Encephalartos dolomiticus Lavranos & D.L.Goode,,"Over collection
-Reproductive failure",CR,A2d; C1,Decreasing,400,<250,05-Feb,Shrub;Tree,FALSE,TRUE,TRUE,FALSE,TRUE,FALSE,FALSE,FALSE,1
+Reproductive failure",CR,A2d; C1,Decreasing,400,<250,42405,Shrub;Tree,FALSE,TRUE,TRUE,FALSE,TRUE,FALSE,FALSE,FALSE,1
 Encephalartos dyerianus Lavranos & D.L.Goode,,"Reproductive failure
 Over collecting
 ",CR,B1ab(v)+2ab(v),Decreasing,0.3,500-800,,Tree,FALSE,TRUE,TRUE,FALSE,TRUE,FALSE,FALSE,FALSE,1
@@ -613,7 +613,7 @@ Has caused about 20% decline within the last 1.5 generations (50 years), and wit
 Encephalartos senticosus Vorster,,"Traditional medicine
 Over collecting",VU,A2ace; C1,Decreasing,776,5000-10000,,Tree,FALSE,TRUE,TRUE,TRUE,TRUE,FALSE,FALSE,FALSE,1
 Encephalartos transvenosus Stapf & Burtt Davy,,,LC,,Decreasing,10000,>20000,>2,Shrub;Tree,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,1
-Encephalartos trispinosus (Hook.) R.A.Dyer,,"Over collecting and habitat degradation due to overgrazing (subpopulations are mostly on farmland) has already caused declines in this species in the last 50 years, it is expected that the population will decline by at least 30% within 3 generations (90 y",VU,A2cd,Decreasing,2500,,10-May,Dwarf shrub;Shrub,FALSE,TRUE,TRUE,FALSE,TRUE,FALSE,FALSE,FALSE,1
+Encephalartos trispinosus (Hook.) R.A.Dyer,,"Over collecting and habitat degradation due to overgrazing (subpopulations are mostly on farmland) has already caused declines in this species in the last 50 years, it is expected that the population will decline by at least 30% within 3 generations (90 y",VU,A2cd,Decreasing,2500,,42500,Dwarf shrub;Shrub,FALSE,TRUE,TRUE,FALSE,TRUE,FALSE,FALSE,FALSE,1
 Encephalartos villosus Lem.,,,LC,,Decreasing,14000,,,Dwarf shrub;Geophyte;Shrub,TRUE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,1
 Encephalartos woodii Sander,,Extinct in the wild due to harvesting of bark for medicinal use,EW,,,0,,,Tree,FALSE,TRUE,TRUE,TRUE,FALSE,FALSE,FALSE,FALSE,1
 Erythrophleum lasianthum,"JEV: not threatened (only NT) therefore remove. Also conspicuous, common and easy to find.
@@ -639,7 +639,7 @@ AGR: I disagree: this would be counterproductive for Euphorbia and Aloe.  Perhap
 Euphorbia avasmontana Dinter,"LVS: maybe block all species
 AGR: I disagree: this would be counterproductive for Euphorbia and Aloe.  Perhaps restrict it to “barrel” Euphorbias, but only if more than half the species are threatened",,LC,,Stable,,,,Shrub;Succulent,TRUE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,1
 "Euphorbia barnardii A.C.White, R.A.Dyer & B.Sloane","LVS: maybe block all species
-AGR: I disagree: this would be counterproductive for Euphorbia and Aloe.  Perhaps restrict it to “barrel” Euphorbias, but only if more than half the species are threatened",,EN,"A2ace; B1ab(ii,iii,iv,v)+2ab(ii,iii,iv,v)",Decreasing,500,<10000,05-Mar,Shrub;Succulent,TRUE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,1
+AGR: I disagree: this would be counterproductive for Euphorbia and Aloe.  Perhaps restrict it to “barrel” Euphorbias, but only if more than half the species are threatened",,EN,"A2ace; B1ab(ii,iii,iv,v)+2ab(ii,iii,iv,v)",Decreasing,500,<10000,42434,Shrub;Succulent,TRUE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,1
 Euphorbia brakdamensis N.E.Br.,"LVS: maybe block all species
 AGR: I disagree: this would be counterproductive for Euphorbia and Aloe.  Perhaps restrict it to “barrel” Euphorbias, but only if more than half the species are threatened",,DDT,,Unknown,,,,Shrub;Succulent,TRUE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,1
 Euphorbia braunsii N.E.Br.,"LVS: maybe block all species
@@ -815,7 +815,7 @@ AGR: I disagree: this would be counterproductive for Euphorbia and Aloe.  Perhap
 Euphorbia mauritanica L.,"LVS: maybe block all species
 AGR: I disagree: this would be counterproductive for Euphorbia and Aloe.  Perhaps restrict it to “barrel” Euphorbias, but only if more than half the species are threatened",,LC,,Stable,,,,Shrub;Succulent,TRUE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,1
 Euphorbia melanohydrata Nel,"LVS: maybe block all species
-AGR: I disagree: this would be counterproductive for Euphorbia and Aloe.  Perhaps restrict it to “barrel” Euphorbias, but only if more than half the species are threatened",,EN,C2a(i),Decreasing,450,<200,03-Feb,Dwarf shrub;Succulent,TRUE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,1
+AGR: I disagree: this would be counterproductive for Euphorbia and Aloe.  Perhaps restrict it to “barrel” Euphorbias, but only if more than half the species are threatened",,EN,C2a(i),Decreasing,450,<200,42403,Dwarf shrub;Succulent,TRUE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,1
 Euphorbia meloformis Aiton,"LVS: maybe block all species
 AGR: I disagree: this would be counterproductive for Euphorbia and Aloe.  Perhaps restrict it to “barrel” Euphorbias, but only if more than half the species are threatened",,NT,"B1ab(i,ii,iii,iv,v)",Decreasing,4030,,,Dwarf shrub;Shrub;Succulent,TRUE,TRUE,TRUE,FALSE,TRUE,FALSE,FALSE,FALSE,1
 Euphorbia monteiroi Hook.f. subsp. ramosa L.C.Leach,"LVS: maybe block all species
@@ -1025,7 +1025,7 @@ AGR: Agree",,NE,,,,,,Succulent,TRUE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,1
 Haworthia bolusii Baker var. pringlei (C.L.Scott) M.B.Bayer,"LVS: block all species
 AGR: Agree",,NE,,,,,,Succulent,TRUE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,1
 Haworthia chloracantha Haw.,"LVS: block all species
-AGR: Agree",,EN,"B1ab(iii,iv,v)",Decreasing,1343,,10-Jun,Succulent,TRUE,TRUE,TRUE,FALSE,TRUE,FALSE,FALSE,FALSE,1
+AGR: Agree",,EN,"B1ab(iii,iv,v)",Decreasing,1343,,42531,Succulent,TRUE,TRUE,TRUE,FALSE,TRUE,FALSE,FALSE,FALSE,1
 Haworthia chloracantha Haw. var. chloracantha,"LVS: block all species
 AGR: Agree",,NE,,,,,,Succulent,TRUE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,1
 Haworthia chloracantha Haw. var. denticulifera (Poelln.) M.B.Bayer,"LVS: block all species
@@ -1203,7 +1203,7 @@ AGR: Agree",,NE,,,,,,Succulent,TRUE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,1
 Haworthia nortieri G.G.Sm. var. pehlemanniae (C.L.Scott) M.B.Bayer,"LVS: block all species
 AGR: Agree",,NE,,,,,,Succulent,TRUE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,1
 Haworthia outeniquensis M.B.Bayer,"LVS: block all species
-AGR: Agree",,VU,"B1ab(ii,iii,iv,v)+2ab(ii,iii,iv,v)",Decreasing,136,,20-Jun,Succulent,TRUE,TRUE,TRUE,FALSE,TRUE,FALSE,FALSE,FALSE,1
+AGR: Agree",,VU,"B1ab(ii,iii,iv,v)+2ab(ii,iii,iv,v)",Decreasing,136,,42541,Succulent,TRUE,TRUE,TRUE,FALSE,TRUE,FALSE,FALSE,FALSE,1
 Haworthia parksiana Poelln.,"LVS: block all species
 AGR: Agree",,CR,A2acd,Decreasing,35,<1000,4,Succulent,TRUE,TRUE,TRUE,FALSE,TRUE,FALSE,FALSE,FALSE,1
 Haworthia pubescens M.B.Bayer,"LVS: block all species

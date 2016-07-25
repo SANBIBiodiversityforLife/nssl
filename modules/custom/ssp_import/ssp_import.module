@@ -8,26 +8,26 @@ use Drupal\taxonomy\Entity\Term;
 function ssp_import_node_presave($node){
 	// Reset the sensitivity each time before we save
 	$node->field_sensitivity->value = '';
+	$node->field_is_sensitive->value = 0;
+			
 	
-	// Utilisation is having a significant effect
-	if($node->field_exploitation_extent->value != 'relatives') {		
+	// Deal with the close relatives separately
+	if($node->field_exploitation_extent->value != 'uncertain') {	
 		
 		// Individuals are permanently removed and killed
-		$targeted_demographics = [];
-		foreach($node->field_targeted_demographics->getValue() as $t) {
-			$targeted_demographics[] = $t['value'];
-		}
-		if(in_array('mature', $targeted_demographics) || in_array('immature', $targeted_demographics)) {
+		if($node->field_targeted_demographics->value == 'harmful') {
 			
-			// Either the population is small, the range is small or it's got a slow growth rate 
-			if(count($node->field_population_size->getValue()) > 0) { 
+			// It is sensitive if there is a vulnerable population
+			if($node->field_population_vulnerability->value == 'vulnerable') { 
 				$node->field_sensitivity->value = 'rare';
+				$node->field_is_sensitive->value = 1;
 			}
 			
 			// Otherwise, if the exploitation is significant...
 			else if(($node->field_exploitation_extent->value == 'significant')) {
 				$node->field_sensitivity->value = 'exploited';
-			}		
+				$node->field_is_sensitive->value = 1;
+			}
 		}
 	}
 	
@@ -37,18 +37,24 @@ function ssp_import_node_presave($node){
 		// Double check that the relative is actually a sensitive species
 		$relative_nid = $node->field_similar_species->getValue()[0]['target_id'];
 		$relative = Node::load($relative_nid);
-		if(count($relative->field_sensitivity->getValue()) > 0) {
+		if($node->field_is_sensitive->value > 0) {
 		
-			// Does this species have a small population, small range or slow growth rate?
-			if(count($node->field_population_size->getValue()) > 0) { 
+			// Does this species have a vulnerable population
+			if($node->field_population_vulnerability->value == 'vulnerable') { 
 				$node->field_sensitivity->value = 'relative';
+				$node->field_is_sensitive->value = 1;
 			}
-		}
-	
+		}	
 	}
 	
 	// At this stage, if it's sensitive, we need to re-evaluate all of the ones that refer to it?
-	
+	//kpr($node->field_population_vulnerability);
+	//kpr($node->field_population_vulnerability->value);
+	//print('ok');
+	//$node->field_population_vulnerability->value = 'exploited';
+	//kpr($node->field_population_vulnerability);
+	//kpr($node->field_population_vulnerability->value);
+	//exit();
 	//print_r(count($relative->field_sensitivity->getValue()));
 	//exit();
 }
