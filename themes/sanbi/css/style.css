@@ -83,7 +83,8 @@ footer.footer nav li a {
 	display: inline;
 	padding-right: 0;
 }
-.species-info-group .field--label:last-child{
+.species-info-group .field--type-text-long .field--label,
+.species-info-group .field--type-text-with-summary .field--label {
 	font-size: 1.1em;	
 }
 
