@@ -83,10 +83,7 @@ footer.footer nav li a {
 	display: inline;
 	padding-right: 0;
 }
-.field--name-field-exploit-extent-references .field--label,
-.field--name-field-uses-references .field--label,
-.field--name-field-tds-references .field--label,
-.field--name-field-pop-size-references .field--label {
+.species-info-group .field--label:last-child{
 	font-size: 1.1em;	
 }
 
