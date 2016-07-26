@@ -6,29 +6,33 @@ jQuery(document).ready(function($){
 	}
 	
 	// Hide the similar species field if required
-	if($('#edit-field-exploitation-extent input:checked').val() != 'relatives') {
+	if($('#edit-field-exploitation-extent input:checked').val() != 'uncertain') {
 		$('#edit-field-similar-species-wrapper').hide();
 	}
-	else {
+	else {		
+		$('a[href="#edit-group-nav-uses"]').parent().hide();
 		$('a[href="#edit-group-demographics-nav').parent().hide();
 	}
 	
 	// Show/hide the other fields
 	$('#edit-field-exploitation-extent input').change(function() {
-		if (this.value == 'relatives') {
+		if (this.value == 'uncertain') {
 			$('#usesformwrapper').hide('fast');
 			$('#demographicsformwrapper').hide('fast');
 			$('#edit-field-similar-species-wrapper').show('fast');
 			
 			// Take this out if necessary
+			$('a[href="#edit-group-nav-uses"]').parent().hide('fast');
 			$('a[href="#edit-group-demographics-nav').parent().hide('fast');
 		}
 		else {
+			$('#usesformwrapper').show('fast');
 			$('#demographicsformwrapper').show('fast');
 			$('#edit-field-similar-species-wrapper input').val("");
 			$('#edit-field-similar-species-wrapper').hide('fast');
 			
 			// Take this out if necessary
+			$('a[href="#edit-group-nav-uses"]').parent().show('fast');
 			$('a[href="#edit-group-demographics-nav').parent().show('fast');
 		}
 	});
