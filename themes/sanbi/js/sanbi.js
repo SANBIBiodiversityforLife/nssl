@@ -9,31 +9,35 @@ jQuery(document).ready(function($){
 	if($('#edit-field-exploitation-extent input:checked').val() != 'uncertain') {
 		$('#edit-field-similar-species-wrapper').hide();
 	}
+	else if($('#edit-field-exploitation-extent input:checked').val() != 'none') {
+		$('a[href="#edit-group-demographics-nav').parent().hide();	
+		$('#edit-field-similar-species-wrapper').hide();	
+	}
 	else {		
-		$('a[href="#edit-group-nav-uses"]').parent().hide();
 		$('a[href="#edit-group-demographics-nav').parent().hide();
 	}
 	
 	// Show/hide the other fields
 	$('#edit-field-exploitation-extent input').change(function() {
-		if (this.value == 'uncertain') {
-			$('#usesformwrapper').hide('fast');
-			$('#demographicsformwrapper').hide('fast');
-			$('#edit-field-similar-species-wrapper').show('fast');
+		if(this.value == 'uncertain' || this.value == 'none') {
+			$('a[href="#edit-group-demographics-nav').parent().hide('fast');	
+			$('#edit-field-targeted-demographics input[type="radio"]:checked').each(function() {
+				$(this).prop('checked', false);
+			});
+			$("#cke_edit-field-pop-vulnerability-refs-0-value iframe").contents().find("body").html('');
 			
-			// Take this out if necessary
-			$('a[href="#edit-group-nav-uses"]').parent().hide('fast');
-			$('a[href="#edit-group-demographics-nav').parent().hide('fast');
+			if(this.value == 'none') {
+				$('#edit-field-similar-species-wrapper').hide('fast');	
+				$('#edit-field-similar-species-wrapper input').val("");	
+			}
+			else {
+				$('#edit-field-similar-species-wrapper').show('fast');
+			}
 		}
 		else {
-			$('#usesformwrapper').show('fast');
-			$('#demographicsformwrapper').show('fast');
-			$('#edit-field-similar-species-wrapper input').val("");
-			$('#edit-field-similar-species-wrapper').hide('fast');
-			
-			// Take this out if necessary
-			$('a[href="#edit-group-nav-uses"]').parent().show('fast');
 			$('a[href="#edit-group-demographics-nav').parent().show('fast');
+			$('#edit-field-similar-species-wrapper').hide('fast');
+			$('#edit-field-similar-species-wrapper input').val("");
 		}
 	});
 });
