@@ -6,15 +6,13 @@ jQuery(document).ready(function($){
 	}
 	
 	// Hide the similar species field if required
-	if($('#edit-field-exploitation-extent input:checked').val() != 'uncertain') {
-		$('#edit-field-similar-species-wrapper').hide();
-	}
-	else if($('#edit-field-exploitation-extent input:checked').val() != 'none') {
+	$('#edit-field-similar-species-wrapper').hide();
+	if($('#edit-field-exploitation-extent input:checked').val() == 'uncertain') {
+		$('#edit-field-similar-species-wrapper').show();
 		$('a[href="#edit-group-demographics-nav').parent().hide();	
-		$('#edit-field-similar-species-wrapper').hide();	
 	}
-	else {		
-		$('a[href="#edit-group-demographics-nav').parent().hide();
+	else if($('#edit-field-exploitation-extent input:checked').val() == 'none') {
+		$('a[href="#edit-group-demographics-nav').parent().hide();	
 	}
 	
 	// Show/hide the other fields
