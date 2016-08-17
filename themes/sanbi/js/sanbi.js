@@ -1,4 +1,7 @@
 jQuery(document).ready(function($){
+	// Hide the N/A option for targeted demographic, it must be optional
+	$('label[for=edit-field-targeted-demographics-none]').hide();
+	
 	// Tried to do this in the template but to no avail. 
 	$('#sspFlag').appendTo("h1.page-header");
 	if ($('.field--name-field-sensitivity .related-species-placeholder').length > 0) {
