@@ -47,9 +47,10 @@ function ssp_import_node_presave($node){
 		// Double check that the relative is actually a sensitive species
 		$relative_nid = $node->field_similar_species->getValue()[0]['target_id'];
 		$relative = Node::load($relative_nid);
-		if($relative->field_is_sensitive->value > 0) {
+		// if($relative->field_is_sensitive->value > 0) { I'm taking this out after Tilla's presentation
+		if($relative->field_targeted_demographics->value == 'harmful' || $node->field_targeted_demographics->value == 'harmful_immature') {
 		
-			// Does this species have a vulnerable population
+			// Does this (the original) species have a vulnerable population
 			if($node->field_population_vulnerability->value == 'vulnerable') { 
 				$node->field_sensitivity->value = 'relative';
 				$node->field_is_sensitive->value = 1;
