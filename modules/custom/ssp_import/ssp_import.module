@@ -21,7 +21,7 @@ function ssp_import_node_presave($node){
 	if($node->field_exploitation_extent->value != 'uncertain') {	
 		
 		// Individuals are permanently removed and killed
-		if($node->field_targeted_demographics->value == 'harmful') {
+		if($node->field_targeted_demographics->value == 'harmful' || $node->field_targeted_demographics->value == 'harmful_immature') {
 			
 			// It is sensitive if there is a vulnerable population
 			if($node->field_population_vulnerability->value == 'vulnerable') { 
