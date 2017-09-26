@@ -1,0 +1,6 @@
+name: SSP Import Module
+description: Runs each time a species is saved to classify it as sensitive or not sensitive according to a set of rules.
+package: Custom
+type: module
+version: 1.0
+core: 8.x

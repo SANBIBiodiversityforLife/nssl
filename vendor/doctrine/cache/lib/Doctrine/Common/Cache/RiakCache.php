@@ -20,7 +20,6 @@
 namespace Doctrine\Common\Cache;
 
 use Riak\Bucket;
-use Riak\Connection;
 use Riak\Input;
 use Riak\Exception;
 use Riak\Object;
@@ -202,9 +201,9 @@ class RiakCache extends CacheProvider
      *
      * @param \Riak\Object $object
      *
-     * @return boolean
+     * @return bool
      */
-    private function isExpired(Object $object)
+    private function isExpired(Object $object) : bool
     {
         $metadataMap = $object->getMetadataMap();
 

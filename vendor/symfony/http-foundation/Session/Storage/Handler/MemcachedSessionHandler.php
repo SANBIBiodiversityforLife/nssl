@@ -24,7 +24,7 @@ namespace Symfony\Component\HttpFoundation\Session\Storage\Handler;
 class MemcachedSessionHandler implements \SessionHandlerInterface
 {
     /**
-     * @var \Memcached Memcached driver.
+     * @var \Memcached Memcached driver
      */
     private $memcached;
 
@@ -34,7 +34,7 @@ class MemcachedSessionHandler implements \SessionHandlerInterface
     private $ttl;
 
     /**
-     * @var string Key prefix for shared environments.
+     * @var string Key prefix for shared environments
      */
     private $prefix;
 
@@ -101,7 +101,9 @@ class MemcachedSessionHandler implements \SessionHandlerInterface
      */
     public function destroy($sessionId)
     {
-        return $this->memcached->delete($this->prefix.$sessionId);
+        $result = $this->memcached->delete($this->prefix.$sessionId);
+
+        return $result || $this->memcached->getResultCode() == \Memcached::RES_NOTFOUND;
     }
 
     /**

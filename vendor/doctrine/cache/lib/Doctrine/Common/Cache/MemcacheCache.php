@@ -97,7 +97,8 @@ class MemcacheCache extends CacheProvider
      */
     protected function doDelete($id)
     {
-        return $this->memcache->delete($id);
+        // Memcache::delete() returns false if entry does not exist
+        return $this->memcache->delete($id) || ! $this->doContains($id);
     }
 
     /**
@@ -114,12 +115,12 @@ class MemcacheCache extends CacheProvider
     protected function doGetStats()
     {
         $stats = $this->memcache->getStats();
-        return array(
+        return [
             Cache::STATS_HITS   => $stats['get_hits'],
             Cache::STATS_MISSES => $stats['get_misses'],
             Cache::STATS_UPTIME => $stats['uptime'],
             Cache::STATS_MEMORY_USAGE     => $stats['bytes'],
             Cache::STATS_MEMORY_AVAILABLE => $stats['limit_maxbytes'],
-        );
+        ];
     }
 }
