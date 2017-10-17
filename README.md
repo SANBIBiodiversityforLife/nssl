@@ -1,3 +1,9 @@
+# SANBI's national sensitive species listing (NSSL) tool
+
+This is a Drupal 8 project with a custom theme (web/themes/custom/sanbi) and a custom module (web/modules/custom/ssp_import). The theme is based on the contributed D8 bootstrap theme, and the module is run every time a species content type is saved, to classify it as either sensitive or non-sensitive.
+
+The project uses the composer template for Drupal projects, with more information on how to run it below. 
+
 # Composer template for Drupal projects
 
 [![Build Status](https://travis-ci.org/drupal-composer/drupal-project.svg?branch=8.x)](https://travis-ci.org/drupal-composer/drupal-project)
