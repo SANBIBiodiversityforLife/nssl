@@ -17,9 +17,9 @@ class SspImportController {
 					'title' => $data[0],
 					'langcode' => 'en',
 					'uid' => '1',
-					'status' => 1,
+					'status' => 0,
 				));
-				$node->field_type = 'plant';
+				$node->field_type = 'Plant';
 				
 				// Past justification
 				$node->field_justification = $data[1] . ' / ' . $data[2];
@@ -94,9 +94,9 @@ class SspImportController {
 					'title' => $data[0],
 					'langcode' => 'en',
 					'uid' => '1',
-					'status' => 1,
+					'status' => 0,
 				));
-				$node->field_type = 'animal';
+				$node->field_type = 'Animal';
 				$node->field_justification = 'Assessor: ' . $data[1] . ' / Source: ' . $data[3] . ' / Threats: ' . $data[4] . ' + ' . $data[6] . ' / Motivation: ' . $data[5];
 				$node->save();
 				kpr($data[0]);
