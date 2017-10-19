@@ -1,6 +1,8 @@
 /**
  * Place your custom styles here.
  */
+.navbar-btn img { width: 70%; }
+.navbar-default { background-color: white; }
 ul.nav-tabs {
 	margin-bottom: 20px;	
 }

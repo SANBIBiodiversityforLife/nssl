@@ -9,7 +9,7 @@ class SspImportController {
   public function content() {
     $row = 1;
 	/* Plants */
-	if (($handle = fopen("http://ssp.localhost/sites/default/files/ssp.csv", "r")) !== FALSE) {
+	if (($handle = fopen("http://nssl.sanbi.org.za/sites/default/files/ssp.csv", "r")) !== FALSE) {
 		while (($data = fgetcsv($handle, 1000, ",")) !== FALSE) {
 			if($row > 1) {
 				$node = Node::create(array(
@@ -20,6 +20,9 @@ class SspImportController {
 					'status' => 0,
 				));
 				$node->field_type = 'Plant';
+				
+				// Family
+				$node->field_type = $data[20];
 				
 				// Past justification
 				$node->field_justification = $data[1] . ' / ' . $data[2];
@@ -86,7 +89,7 @@ class SspImportController {
 	}
 	  	
 	/* Animals */
-	if (($handle = fopen("http://ssp.localhost/sites/default/files/ssp-animals.csv", "r")) !== FALSE) {
+	if (($handle = fopen("http://nssl.sanbi.org.za/sites/default/files/ssp-animals.csv", "r")) !== FALSE) {
 		while (($data = fgetcsv($handle, 1000, ",")) !== FALSE) {
 			if($row > 1) {
 				$node = Node::create(array(
@@ -96,7 +99,8 @@ class SspImportController {
 					'uid' => '1',
 					'status' => 0,
 				));
-				$node->field_type = 'Animal';
+				$node->field_family = $data[7];
+				$node->field_type = $data[8];
 				$node->field_justification = 'Assessor: ' . $data[1] . ' / Source: ' . $data[3] . ' / Threats: ' . $data[4] . ' + ' . $data[6] . ' / Motivation: ' . $data[5];
 				$node->save();
 				kpr($data[0]);

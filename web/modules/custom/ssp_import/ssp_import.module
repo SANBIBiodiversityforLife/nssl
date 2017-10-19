@@ -57,4 +57,10 @@ function ssp_import_node_presave($node){
 			}
 		}	
 	}
+	
+	// As discussed here https://github.com/rukayaj/ssp/issues/43 users with a certain role should trigger a reset back to unpublished status
+	$user = \Drupal::currentUser();
+	if(!$user->hasPermission('administer nodes')) {
+		$node->status = 0;
+	}
 }
