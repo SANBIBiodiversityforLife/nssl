@@ -20,6 +20,10 @@ jQuery(document).ready(function($){
 	
 	// Show/hide the other fields
 	$('#edit-field-exploitation-extent input').change(function() {
+		// Make sure these are shown by default (only not shown for none value
+		$('a[href="#edit-group-pop-size-nav').parent().show('fast');	
+		$('a[href="#edit-group-regeneration-potential').parent().show('fast');	
+		
 		if(this.value == 'uncertain' || this.value == 'none') {
 			$('a[href="#edit-group-demographics-nav').parent().hide('fast');	
 			$('#edit-field-targeted-demographics input[type="radio"]:checked').each(function() {
@@ -30,6 +34,10 @@ jQuery(document).ready(function($){
 			if(this.value == 'none') {
 				$('#edit-field-similar-species-wrapper').hide('fast');	
 				$('#edit-field-similar-species-wrapper input').val("");	
+				
+				// If a species is not exploited one should not fill in any other criteria. 
+				$('a[href="#edit-group-pop-size-nav').parent().hide('fast');	
+				$('a[href="#edit-group-regeneration-potential').parent().hide('fast');	
 			}
 			else {
 				$('#edit-field-similar-species-wrapper').show('fast');
