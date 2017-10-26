@@ -1,4 +1,14 @@
 jQuery(document).ready(function($){
+	// We are going to show the sensitivity status if possible. 
+	// Note it is printing the sensitivity checkbox in the form, but it's hidden in the css so you won't see it on the browser.
+	if($('.node-species-edit-form').length) { 
+		if($('#edit-field-is-sensitive-value').is(":checked")) {
+			$('h1.page-header').append(' <small>currently <button type="button" class="btn btn-danger btn-sm" disabled id="sspFlag" style="cursor: default"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span> Sensitive</button></small>');
+		} else {
+			$('h1.page-header').append(' <small>currently <button type="button" class="btn btn-info btn-sm" disabled id="sspFlag" style="cursor: default"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span> Not sensitive</button></small>');
+		}
+	}
+		
 	// Hide the N/A option for targeted demographic, it must be optional
 	$('label[for=edit-field-targeted-demographics-none]').hide();
 	

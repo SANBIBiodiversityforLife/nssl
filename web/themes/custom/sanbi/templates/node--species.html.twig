@@ -86,10 +86,12 @@
   {{ title_suffix }}
   
   {% if node.field_sensitivity.value is not empty %}
-  <button type="button" class="btn btn-danger" id="sspFlag"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span> Sensitive</button>
+  <button type="button" class="btn btn-danger" disabled id="sspFlag" style="cursor: default"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span> Sensitive</button>
   {% else %}
-  <button type="button" class="btn btn-info" id="sspFlag"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span> Not sensitive</button>
+  <button type="button" class="btn btn-info" disabled id="sspFlag" style="cursor: default"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span> Not sensitive</button>
   {% endif %}
+  
+  {% if not node.ispublished %}<div class="alert alert-danger" role="alert">Unpublished content</div>{% endif %}
   
   <div{{ content_attributes.addClass('content') }}>
     {{ content }}

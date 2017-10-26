@@ -93,3 +93,17 @@ footer.footer nav li a {
 .path-user .form-item h4.label {
 	color: #8c8c8c;	
 }
+
+/*CSV feed views data export*/
+.csv-feed .feed-icon {
+	color: rgba(0,0,0,0);
+	width: 36px; 
+	padding: 0;
+	overflow: hidden;
+	height: 14px;
+	display: block;
+}
+
+/* Hide the sensitivity status on the edit and create forms */
+.node-species-form .field--name-field-is-sensitive,
+.node-species-edit-form .field--name-field-is-sensitive { display: none; }

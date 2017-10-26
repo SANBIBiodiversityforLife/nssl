@@ -8,7 +8,8 @@ use Drupal\node\Entity\Node;
 class SspImportController {
   public function content() {
     $row = 1;
-	/* Plants */
+	/* 
+	// Plants
 	if (($handle = fopen("http://nssl.sanbi.org.za/sites/default/files/ssp.csv", "r")) !== FALSE) {
 		while (($data = fgetcsv($handle, 1000, ",")) !== FALSE) {
 			if($row > 1) {
@@ -88,7 +89,7 @@ class SspImportController {
 		fclose($handle);
 	}
 	  	
-	/* Animals */
+	// Animals
 	if (($handle = fopen("http://nssl.sanbi.org.za/sites/default/files/ssp-animals.csv", "r")) !== FALSE) {
 		while (($data = fgetcsv($handle, 1000, ",")) !== FALSE) {
 			if($row > 1) {
@@ -110,11 +111,11 @@ class SspImportController {
 		}
 		fclose($handle);
 	}
-	  
+	*/
 	  
     return array(
       '#type' => 'markup',
-      '#markup' => t('<br><br>Successful import!'),
+      '#markup' => t('<br><br>Module turned off, nothing imported!'),
     );
   }
 }
