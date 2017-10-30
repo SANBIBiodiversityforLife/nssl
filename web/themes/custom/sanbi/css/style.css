@@ -107,3 +107,6 @@ footer.footer nav li a {
 /* Hide the sensitivity status on the edit and create forms */
 .node-species-form .field--name-field-is-sensitive,
 .node-species-edit-form .field--name-field-is-sensitive { display: none; }
+
+/* Fixes wonky styling for file field upload boxes */
+.form-file { height: auto; }
