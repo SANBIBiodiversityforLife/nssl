@@ -11,9 +11,11 @@ function ssp_import_node_presave($node){
 	$node->field_is_sensitive->value = 0;
 			
 	// First, species which are not exploited, are managed or have exploitation unknown cannot be sensitive
+	// Added good regeneration potential to this list too based on Reuben's feedback
 	if($node->field_exploitation_extent->value == 'none' || 
 	   $node->field_exploitation_extent->value == 'unknown' ||
-	   $node->field_exploitation_extent->value == 'managed') {	
+	   $node->field_exploitation_extent->value == 'managed' ||
+	   $node->field_regeneration_potential->value == 'good') {	
 		return;
 	}
 	
