@@ -6,6 +6,27 @@ use Drupal\taxonomy\Entity\Term;
 
 
 function ssp_import_node_presave($node){
+	// The first time a node is saved, the system should check to see if it was on the 2010 list before, and flag it accordingly:
+	// In fact, it can't just be the first time, because a user can edit a species name whenever
+	// First build up an array of family keys mapped to arrays of species names e.g.: 
+	// array('Viperidae' => ['Bitis gabonica', 'Bitis inornanata'], 'Gruidaei' => [some more here etc])
+	$species = array();
+	if (($handle = fopen("http://nssl.sanbi.org.za/sites/default/files/ssp-both-checking-file.csv", "r")) !== FALSE) {
+		while (($data = fgetcsv($handle, 1000, ",")) !== FALSE) {
+			if(array_key_exists($data[2], $species)) {
+				array_push($species[$data[2]], $data[0]);
+			} else {
+				$species[$data[2]] = [$data[0]];
+			}
+		}
+	}
+	
+	// Check the family first to save time, then the species
+	if(array_key_exists($node->field_family->value, $species)) {
+		$node->field_sensitive_in_2010->value = in_array($node->title->value, $species[$node->field_family->value]);
+	}
+	
+	// Go into the logic of whether it is sensitive or not below
 	// Reset the sensitivity each time before we save
 	$node->field_sensitivity->value = '';
 	$node->field_is_sensitive->value = 0;
