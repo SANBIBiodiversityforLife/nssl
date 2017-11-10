@@ -65,21 +65,13 @@ function ssp_import_node_presave($node){
 	}
 	
 	// Utilisation is having a significant effect on a close relative with similar life traits
+	// Note this script used to check a related node's sensitivity status, taking that logic out now on request
 	else {		
-		
-		// Double check that the relative is actually a sensitive species
-		$relative_nid = $node->field_similar_species->getValue()[0]['target_id'];
-		$relative = Node::load($relative_nid);
-		// if($relative->field_is_sensitive->value > 0) { I'm taking this out after Tilla's presentation
-		if($relative->field_targeted_demographics->value == 'harmful' || $relative->field_targeted_demographics->value == 'harmful_immature') {
-			// If the regeneration potential for this species is good this species should not be sensitive
-			
-			// Does this (the original) species have a vulnerable population AND poor regeneration potential? If so then it's sensitive
-			if($node->field_regeneration_potential->value == 'poor' && $node->field_population_vulnerability->value == 'vulnerable') { 
-				$node->field_sensitivity->value = 'relative';
-				$node->field_is_sensitive->value = 1;
-			}
-		}	
+		// Does this (the original) species have a vulnerable population AND poor regeneration potential? If so then it's sensitive
+		if($node->field_regeneration_potential->value == 'poor' && $node->field_population_vulnerability->value == 'vulnerable') { 
+			$node->field_sensitivity->value = 'relative';
+			$node->field_is_sensitive->value = 1;
+		}
 	}
 	
 	// As discussed here https://github.com/rukayaj/ssp/issues/43 users with a certain role should trigger a reset back to unpublished status
