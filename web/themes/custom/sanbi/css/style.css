@@ -110,3 +110,14 @@ footer.footer nav li a {
 
 /* Fixes wonky styling for file field upload boxes */
 .form-file { height: auto; }
+
+/* Makes link to comments from rebuttals more obvious */
+.important-text { 
+font-size: 15px;
+font-weight: bold;
+border: 1px solid #337ab7;
+border-radius: 5px;
+padding: 6px 8px;
+background-color: #fffedf;
+margin: 5px 0;
+}
