@@ -4,7 +4,10 @@ use Drupal\Core\Routing\RouteMatchInterface;
 use Drupal\node\Entity\Node;
 use Drupal\taxonomy\Entity\Term;
 
-
+/* 
+Note that this file isn't really for importing content as the file name suggests. 
+It's just easier not to have two different modules, one for bulk importing and one for performing logic when a species is saved.
+*/
 function ssp_import_node_presave($node){
 	// The first time a node is saved, the system should check to see if it was on the 2010 list before, and flag it accordingly:
 	// In fact, it can't just be the first time, because a user can edit a species name whenever
@@ -38,7 +41,8 @@ function ssp_import_node_presave($node){
 	if($node->field_exploitation_extent->value == 'none' || 
 	   $node->field_exploitation_extent->value == 'unknown' ||
 	   $node->field_exploitation_extent->value == 'managed' ||
-	   $node->field_regeneration_potential->value == 'good') {	
+	   $node->field_regeneration_potential->value == 'good' || 
+	   $node->field_regeneration_potential->value == 'unknown') {	
 		return;
 	}
 	
