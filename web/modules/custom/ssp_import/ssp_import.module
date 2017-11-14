@@ -28,11 +28,13 @@ function ssp_import_node_presave($node){
 	
 	// Go into the logic of whether it is sensitive or not below
 	// Reset the sensitivity each time before we save
+	// So first turn sensitivity off
 	$node->field_sensitivity->value = '';
 	$node->field_is_sensitive->value = 0;
 			
-	// First, species which are not exploited, are managed or have exploitation unknown cannot be sensitive
+	// Species which are not exploited, are managed or have exploitation unknown cannot be sensitive
 	// Added good regeneration potential to this list too based on Reuben's feedback
+	// Don't do any further checks, return out with sensitivity still set to off
 	if($node->field_exploitation_extent->value == 'none' || 
 	   $node->field_exploitation_extent->value == 'unknown' ||
 	   $node->field_exploitation_extent->value == 'managed' ||
@@ -40,22 +42,23 @@ function ssp_import_node_presave($node){
 		return;
 	}
 	
-	// Deal with the close relatives separately
+	// Deal with all exploitation options EXCEPT when there's a close relative which is also exploited ('uncertain' value)
 	if($node->field_exploitation_extent->value != 'uncertain') {	
 		
-		// Individuals are permanently removed and killed
+		// Individuals must be permanently removed and killed for us to consider a species to be sensitive
 		if($node->field_targeted_demographics->value == 'harmful' || $node->field_targeted_demographics->value == 'harmful_immature') {
 			
-			// It is sensitive if there is a vulnerable population
+			// Next check if there is a vulnerable population, if there is it's sensitive
 			if($node->field_population_vulnerability->value == 'vulnerable') { 
 				$node->field_sensitivity->value = 'rare';
 				$node->field_is_sensitive->value = 1;
 			}
 			
-			// Otherwise, if the exploitation is significant...
+			// Otherwise, if the pop isn't vulnerable but the exploitation is significant then it's sensitive
+			// This is in an else because the 'rare' status trumps the 'exploited' status, so to speak
 			else if($node->field_exploitation_extent->value == 'significant') {
 				
-				// Check the regeneration potential value, if it's good then flag as sensitive
+				// Added this in - also check the regeneration potential value
 				if($node->field_regeneration_potential->value == 'poor') {
 					$node->field_sensitivity->value = 'exploited';
 					$node->field_is_sensitive->value = 1;
@@ -64,7 +67,7 @@ function ssp_import_node_presave($node){
 		}
 	}
 	
-	// Utilisation is having a significant effect on a close relative with similar life traits
+	// Ok now deal with a close relative with similar life traits being exploited
 	// Note this script used to check a related node's sensitivity status, taking that logic out now on request
 	else {		
 		// Does this (the original) species have a vulnerable population AND poor regeneration potential? If so then it's sensitive
