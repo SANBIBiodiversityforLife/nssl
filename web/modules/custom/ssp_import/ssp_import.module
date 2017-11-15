@@ -9,7 +9,7 @@ Note that this file isn't really for importing content as the file name suggests
 It's just easier not to have two different modules, one for bulk importing and one for performing logic when a species is saved.
 */
 function ssp_import_node_presave($node){
-	// The first time a node is saved, the system should check to see if it was on the 2010 list before, and flag it accordingly:
+	// Whenever a node is saved, the system should check to see if it was on the 2010 list before, and flag it accordingly:
 	// In fact, it can't just be the first time, because a user can edit a species name whenever
 	// First build up an array of family keys mapped to arrays of species names e.g.: 
 	// array('Viperidae' => ['Bitis gabonica', 'Bitis inornanata'], 'Gruidaei' => [some more here etc])
@@ -28,6 +28,17 @@ function ssp_import_node_presave($node){
 	if(array_key_exists($node->field_family->value, $species)) {
 		$node->field_sensitive_in_2010->value = in_array($node->title->value, $species[$node->field_family->value]);
 	}
+	
+	// \Drupal::logger('ssp_import')->notice('Node is new: ' . $node->nid->value);
+	// Next, sometimes we bulk import species and set them to a preliminary sensitivity
+	// In which case we should not override their status. 
+	// To check for that is to see if it's the first time a node is saved AND sensitivity value = prelim
+	//if($node->is_new && ($node->field_sensitivity->value == 'preliminary_not_sensitive' || $node->field_sensitivity->value == 'preliminary_sensitive')) {
+	if(empty($node->nid->value) && ($node->field_sensitivity->value == 'preliminary_not_sensitive' || $node->field_sensitivity->value == 'preliminary_sensitive')) {
+		
+		return;
+	}
+	
 	
 	// Go into the logic of whether it is sensitive or not below
 	// Reset the sensitivity each time before we save

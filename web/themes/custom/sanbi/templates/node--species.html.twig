@@ -85,10 +85,11 @@
   {% endif %}
   {{ title_suffix }}
   
-  {% if node.field_sensitivity.value is not empty %}
-  <button type="button" class="btn btn-danger" disabled id="sspFlag" style="cursor: default"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span> Sensitive</button>
+  
+  {% if node.field_is_sensitive.value %}
+  <button type="button" class="btn btn-danger" disabled id="sspFlag" style="cursor: default"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span> Sensitive{% if node.field_sensitivity.value=="preliminary_sensitive"%} (preliminary status prior to assessment){% endif %}</button>
   {% else %}
-  <button type="button" class="btn btn-info" disabled id="sspFlag" style="cursor: default"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span> Not sensitive</button>
+  <button type="button" class="btn btn-info" disabled id="sspFlag" style="cursor: default"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span> Not sensitive{% if node.field_sensitivity.value=="preliminary_not_sensitive"%} (preliminary status prior to assessment){% endif %}</button>
   {% endif %}
   
   <p style="text-align: right; margin: -20px 0 10px 0; ">Assessor: {{ author_name }}</p>
