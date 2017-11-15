@@ -94,9 +94,6 @@
   <p style="text-align: right; margin: -20px 0 10px 0; ">Assessor: {{ author_name }}</p>
   
   {% if not node.ispublished %}<div class="alert alert-danger" role="alert">Unpublished content</div>{% endif %}
-  {% if logged_in and node.field_justification.value is not empty %}
-	<div class="alert alert-info" role="alert"><strong>{{ node.field_justification.fieldDefinition.label }}:</strong> {{ node.field_justification.value }}</div>
-  {% endif %}
   
   <div{{ content_attributes.addClass('content') }}>
     {{ content }}
