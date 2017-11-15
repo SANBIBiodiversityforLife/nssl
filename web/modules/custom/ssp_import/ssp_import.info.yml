@@ -1,5 +1,5 @@
 name: SSP Import Module
-description: Runs each time a species is saved to classify it as sensitive or not sensitive according to a set of rules.
+description: Can run a bulk import if you navigate to it in the admin menu. Also runs each time a species is saved to classify it as sensitive or not sensitive according to a set of rules.
 package: Custom
 type: module
 version: 1.0
