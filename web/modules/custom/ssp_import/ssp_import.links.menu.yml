@@ -1,6 +1,6 @@
 ssp_import.admin:
-  title: 'SSP Import module settings'
-  description: 'example of how to make an admin settings page link'
+  title: 'Run SSP Import module'
+  description: 'Runs a bulk import - import file must be /sites/default/files/species_for_import.csv with format "Group,Family,Species,Non-assessed status,Author UID"'
   parent: system.admin_config_development
   route_name: ssp_import.content
   weight: 100
