@@ -16,10 +16,10 @@ function ssp_import_node_presave($node){
 	$species = array();
 	if (($handle = fopen("http://nssl.sanbi.org.za/sites/default/files/ssp-both-checking-file.csv", "r")) !== FALSE) {
 		while (($data = fgetcsv($handle, 1000, ",")) !== FALSE) {
-			if(array_key_exists($data[2], $species)) {
-				array_push($species[$data[2]], $data[0]);
+			if(array_key_exists($data[1], $species)) {
+				array_push($species[$data[1]], $data[0]);
 			} else {
-				$species[$data[2]] = [$data[0]];
+				$species[$data[1]] = [$data[0]];
 			}
 		}
 	}
@@ -27,6 +27,9 @@ function ssp_import_node_presave($node){
 	// Check the family first to save time, then the species
 	if(array_key_exists($node->field_family->value, $species)) {
 		$node->field_sensitive_in_2010->value = in_array($node->title->value, $species[$node->field_family->value]);
+	}
+	else {
+		$node->field_sensitive_in_2010->value = 0;
 	}
 	
 	// \Drupal::logger('ssp_import')->notice('Node is new: ' . $node->nid->value);
