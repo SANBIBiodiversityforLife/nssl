@@ -13,6 +13,9 @@ ul.nav-tabs {
 	font-size: 1.5em;
 	font-weight: bold;
 }
+.field--label-inline .field--label {
+	font-size: 1em;
+}
 .content section h2 {
 	font-size: 1.8em;
 	border-top: 15px solid #e5f0f3;
@@ -121,3 +124,5 @@ padding: 6px 8px;
 background-color: #fffedf;
 margin: 5px 0;
 }
+
+#node-species-form #edit-field-rebuttal-wrapper { display: none; }
